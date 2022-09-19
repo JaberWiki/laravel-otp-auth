@@ -9,7 +9,7 @@ interface GeneratorContract
     /**
      * Generate a new One Time Password code.
      *
-     * @param int|null $length
+     * @param  int|null  $length
      * @return string
      */
     public function generate(null|int $length = null): string;

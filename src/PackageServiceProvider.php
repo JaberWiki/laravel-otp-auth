@@ -2,11 +2,17 @@
 
 namespace JustSteveKing\Laravel\OTPAuth;
 
+use JustSteveKing\Laravel\OTPAuth\Contracts\GeneratorContract;
+use JustSteveKing\Laravel\OTPAuth\Generators\OneTimePasswordGenerator;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider as SpatieServiceProvider;
 
 final class PackageServiceProvider extends SpatieServiceProvider
 {
+    public array $bindings = [
+        GeneratorContract::class => OneTimePasswordGenerator::class,
+    ];
+
     public function configurePackage(Package $package): void
     {
         /*

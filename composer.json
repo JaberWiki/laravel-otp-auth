@@ -1,18 +1,19 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "juststeveking/laravel-otp-auth",
+    "description": "A Laravel package to provide a one time password authentication flow.",
     "keywords": [
-        ":vendor_name",
+        "JustSteveKing",
         "laravel",
-        ":package_slug"
+        "laravel-otp-auth"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/juststeveking/laravel-otp-auth",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
-            "role": "Developer"
+            "name": "Steve McDougall",
+            "email": "juststevemcd@gmail.com",
+            "role": "Developer",
+            "homepage": "https://www.juststeveking.uk/"
         }
     ],
     "require": {
@@ -35,32 +36,33 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "JustSteveKing\\Laravel\\OTPAuth\\": "src",
+            "JustSteveKing\\Laravel\\OTPAuth\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "JustSteveKing\\Laravel\\OTPAuth\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "analyse": "./vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/pest",
+        "test-coverage": "./vendor/bin/pest --coverage",
+        "format": "./vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "JustSteveKing\\Laravel\\OTPAuth\\PackageServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
